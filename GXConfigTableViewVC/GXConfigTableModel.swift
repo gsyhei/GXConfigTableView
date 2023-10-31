@@ -75,6 +75,8 @@ public class GXConfigTableRowSwitchModel: GXConfigTableRowDefaultModel {
     public override var reuseIdentifier: String { return "SwitchCell" }
     /// cell switch.isOn, default is false.
     public var isOn = BehaviorRelay(value: false)
+    /// cell switch.onTintColor
+    public var onTintColor: UIColor? = .systemBlue
     /// cell input size, default is nil.
     public var switchSize: CGSize = .init(width: 51, height: 31)
     /// cell didSelectAtRow switch action.

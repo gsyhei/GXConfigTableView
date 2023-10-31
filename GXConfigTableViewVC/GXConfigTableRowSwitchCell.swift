@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoaPlus
 
 public class GXConfigTableRowSwitchCell: GXConfigTableRowDefaultCell {
 
@@ -18,6 +19,7 @@ public class GXConfigTableRowSwitchCell: GXConfigTableRowDefaultCell {
     public func bind<T: GXConfigTableRowSwitchModel>(model: T, type: T.Type) {
         super.bind(model: model, type: GXConfigTableRowSwitchModel.self)
 
+        self.switchView.onTintColor = model.onTintColor
         self.switchView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: model.switchSize)
         self.switchView.sizeToFit()
         (self.switchView.rx.isOn <-> model.isOn).disposed(by: disposeBag)

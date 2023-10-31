@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoaPlus
 
 public class GXConfigTableRowInputCell: GXConfigTableRowDefaultCell {
 
