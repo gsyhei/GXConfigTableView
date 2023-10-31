@@ -6,9 +6,7 @@ target 'GXConfigTableViewVCSample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   inhibit_all_warnings! #抑制所有的警告!
-  
-  # table/collection快速注册cell扩展
-  pod 'Reusable'
+
   # RAC
   pod 'RxCocoa'
 

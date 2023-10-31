@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5B62C60DB3C3E5CCBED846FE /* Pods_GXConfigTableViewVCSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23794CA73859A1AA1BFF8126 /* Pods_GXConfigTableViewVCSample.framework */; };
+		9682CAF12AF0E10E0066B2C7 /* GXConfigTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682CAEC2AF0E10E0066B2C7 /* GXConfigTableModel.swift */; };
+		9682CAF72AF0F8800066B2C7 /* GXConfigTableRowDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682CAF52AF0F8800066B2C7 /* GXConfigTableRowDefaultCell.swift */; };
+		9682CAFA2AF10E0F0066B2C7 /* GXConfigTableRowInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682CAF92AF10E0F0066B2C7 /* GXConfigTableRowInputCell.swift */; };
+		9682CAFC2AF116B60066B2C7 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682CAFB2AF116B60066B2C7 /* Operators.swift */; };
+		9682CAFE2AF123DD0066B2C7 /* GXConfigTableRowSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682CAFD2AF123DD0066B2C7 /* GXConfigTableRowSwitchCell.swift */; };
+		9682CB002AF126560066B2C7 /* GXConfigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9682CAFF2AF126560066B2C7 /* GXConfigTableViewController.swift */; };
 		96EE43922AF0D17700B1842C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE43912AF0D17700B1842C /* AppDelegate.swift */; };
 		96EE43942AF0D17700B1842C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE43932AF0D17700B1842C /* SceneDelegate.swift */; };
 		96EE43962AF0D17700B1842C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE43952AF0D17700B1842C /* ViewController.swift */; };
@@ -40,6 +46,12 @@
 		23794CA73859A1AA1BFF8126 /* Pods_GXConfigTableViewVCSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GXConfigTableViewVCSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E229546AA471B10869A230 /* Pods-GXConfigTableViewVCSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXConfigTableViewVCSample.debug.xcconfig"; path = "Target Support Files/Pods-GXConfigTableViewVCSample/Pods-GXConfigTableViewVCSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5F58B57A81BF8ECFBD6DD6F6 /* Pods-GXConfigTableViewVCSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GXConfigTableViewVCSample.release.xcconfig"; path = "Target Support Files/Pods-GXConfigTableViewVCSample/Pods-GXConfigTableViewVCSample.release.xcconfig"; sourceTree = "<group>"; };
+		9682CAEC2AF0E10E0066B2C7 /* GXConfigTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXConfigTableModel.swift; sourceTree = "<group>"; };
+		9682CAF52AF0F8800066B2C7 /* GXConfigTableRowDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowDefaultCell.swift; sourceTree = "<group>"; };
+		9682CAF92AF10E0F0066B2C7 /* GXConfigTableRowInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowInputCell.swift; sourceTree = "<group>"; };
+		9682CAFB2AF116B60066B2C7 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		9682CAFD2AF123DD0066B2C7 /* GXConfigTableRowSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowSwitchCell.swift; sourceTree = "<group>"; };
+		9682CAFF2AF126560066B2C7 /* GXConfigTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableViewController.swift; sourceTree = "<group>"; };
 		96EE438E2AF0D17700B1842C /* GXConfigTableViewVCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GXConfigTableViewVCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EE43912AF0D17700B1842C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96EE43932AF0D17700B1842C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +167,12 @@
 		96EE43C12AF0D18E00B1842C /* GXConfigTableViewVC */ = {
 			isa = PBXGroup;
 			children = (
+				9682CAFB2AF116B60066B2C7 /* Operators.swift */,
+				9682CAEC2AF0E10E0066B2C7 /* GXConfigTableModel.swift */,
+				9682CAF52AF0F8800066B2C7 /* GXConfigTableRowDefaultCell.swift */,
+				9682CAF92AF10E0F0066B2C7 /* GXConfigTableRowInputCell.swift */,
+				9682CAFD2AF123DD0066B2C7 /* GXConfigTableRowSwitchCell.swift */,
+				9682CAFF2AF126560066B2C7 /* GXConfigTableViewController.swift */,
 			);
 			name = GXConfigTableViewVC;
 			path = ../../GXConfigTableViewVC;
@@ -337,8 +355,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EE43962AF0D17700B1842C /* ViewController.swift in Sources */,
+				9682CB002AF126560066B2C7 /* GXConfigTableViewController.swift in Sources */,
+				9682CAFA2AF10E0F0066B2C7 /* GXConfigTableRowInputCell.swift in Sources */,
+				9682CAFC2AF116B60066B2C7 /* Operators.swift in Sources */,
 				96EE43922AF0D17700B1842C /* AppDelegate.swift in Sources */,
+				9682CAFE2AF123DD0066B2C7 /* GXConfigTableRowSwitchCell.swift in Sources */,
+				9682CAF72AF0F8800066B2C7 /* GXConfigTableRowDefaultCell.swift in Sources */,
 				96EE43942AF0D17700B1842C /* SceneDelegate.swift in Sources */,
+				9682CAF12AF0E10E0066B2C7 /* GXConfigTableModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
