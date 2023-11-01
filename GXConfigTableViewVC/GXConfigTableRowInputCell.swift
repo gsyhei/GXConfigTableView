@@ -10,7 +10,7 @@ import RxCocoaPlus
 
 public class GXConfigTableRowInputCell: GXConfigTableRowDefaultCell {
 
-    lazy var textField: UITextField = {
+    public lazy var textField: UITextField = {
         let input = UITextField(frame: .zero)
         input.textAlignment = .right
         input.keyboardType = .default
@@ -20,8 +20,8 @@ public class GXConfigTableRowInputCell: GXConfigTableRowDefaultCell {
         return input
     }()
 
-    public func bind<T: GXConfigTableRowInputModel>(model: T, type: T.Type) {
-        super.bind(model: model, type: GXConfigTableRowInputModel.self)
+    public func bind<T: GXConfigTableRowInputModel>(model: T) {
+        super.bind(model: model)
 
         if let detailColor = model.detailColor {
             self.textField.textColor = detailColor

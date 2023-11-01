@@ -12,7 +12,7 @@ open class GXConfigTableRowDefaultModel: NSObject {
     /// cell reuseIdentifier
     public var reuseIdentifier: String { return "DefaultCell" }
     /// cell style, default is default.
-    public var style: UITableViewCell.CellStyle = .default
+    public var style: UITableViewCell.CellStyle = .value1
     /// cell backgroundColor, default is white.
     public var backgroundColor: UIColor = .white
     /// cell height, default is 50.0.
@@ -37,6 +37,10 @@ open class GXConfigTableRowDefaultModel: NSObject {
     public var titleColor: UIColor? = nil
     /// cell detail color, default is nil.
     public var detailColor: UIColor? = nil
+    /// cell title numberOfLines, default is 1.
+    public var titleNumberOfLines: Int = 1
+    /// cell detail numberOfLines, default is 1.
+    public var detailNumberOfLines: Int = 1
     /// cell didSelectAtRow action.
     public var action: (() -> Void)?
 }
@@ -44,6 +48,11 @@ open class GXConfigTableRowDefaultModel: NSObject {
 public class GXConfigTableRowCustomModel: GXConfigTableRowDefaultModel {
     /// cell reuseIdentifier
     public override var reuseIdentifier: String { return "CustomCell" }
+}
+
+public class GXConfigTableRowButtonModel: GXConfigTableRowDefaultModel {
+    /// cell reuseIdentifier
+    public override var reuseIdentifier: String { return "ButtonCell" }
 }
 
 public class GXConfigTableRowAvatarModel: GXConfigTableRowDefaultModel {
@@ -83,28 +92,41 @@ public class GXConfigTableRowSwitchModel: GXConfigTableRowDefaultModel {
     public var switchAction: ((Bool) -> Void)?
 }
 
-public class GXConfigTableSectionModel: NSObject {
-    /// cell reuseIdentifier
+public class GXConfigTableSectionViewModel: NSObject {
+    /// header/foote reuseIdentifier
     public var reuseIdentifier: String { return "HeaderFooterView" }
-    /// header title, default is nil.
-    public var headerTitle: String? = nil
-    /// footer title, default is nil.
-    public var footerTitle: String? = nil
-    /// header/footer font, default is nil.
-    public var headerFooterFont: UIFont? = nil
-    /// header/footer color, default is nil.
-    public var headerFooterColor: UIColor? = nil
-    /// header height, default is leastNormalMagnitude.
-    public var headerHeight: CGFloat = CGFloat.leastNormalMagnitude
-    /// footer height, default is leastNormalMagnitude.
-    public var footerHeight: CGFloat = CGFloat.leastNormalMagnitude
+    /// header/foote content margin, default is 16.0.
+    public var contentMargin: CGFloat = 16.0
+    /// header/foote title, default is nil.
+    public var title: String? = nil
+    /// header/foote detail, default is nil.
+    public var detail: String? = nil
+    /// header/foote title font, default is nil.
+    public var titleFont: UIFont? = nil
+    /// header/foote detail font, default is nil.
+    public var detailFont: UIFont? = nil
+    /// header/foote title color, default is nil.
+    public var titleColor: UIColor? = nil
+    /// header/foote detail color, default is nil.
+    public var detailColor: UIColor? = nil
+    /// header/foote title numberOfLines, default is 1.
+    public var titleNumberOfLines: Int = 1
+    /// header/foote height, default is leastNormalMagnitude.
+    public var height: CGFloat = CGFloat.leastNormalMagnitude
+}
+
+public class GXConfigTableSectionModel: NSObject {
+    /// header model
+    public var header: GXConfigTableSectionViewModel?
+    /// footer model
+    public var footer: GXConfigTableSectionViewModel?
     /// section row cell model list.
     public var rowList: Array<GXConfigTableRowDefaultModel> = []
 }
 
 public class GXConfigTableModel: NSObject {
     /// table type, default is insetGrouped.
-    public var type: UITableView.Style = .insetGrouped
+    public var style: UITableView.Style = .insetGrouped
     /// table backgroundColor, default is white.
     public var backgroundColor: UIColor = .white
     /// table section model  list.

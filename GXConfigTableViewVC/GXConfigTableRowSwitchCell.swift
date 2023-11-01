@@ -10,15 +10,15 @@ import RxCocoaPlus
 
 public class GXConfigTableRowSwitchCell: GXConfigTableRowDefaultCell {
 
-    lazy var switchView: UISwitch = {
+    public lazy var switchView: UISwitch = {
         let switchView = UISwitch(frame: .zero)
         switchView.addTarget(self, action: #selector(self.switchChange(_:)), for: .valueChanged)
         return switchView
     }()
 
-    public func bind<T: GXConfigTableRowSwitchModel>(model: T, type: T.Type) {
-        super.bind(model: model, type: GXConfigTableRowSwitchModel.self)
-
+    public func bind<T: GXConfigTableRowSwitchModel>(model: T) {
+        super.bind(model: model)
+        
         self.switchView.onTintColor = model.onTintColor
         self.switchView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: model.switchSize)
         self.switchView.sizeToFit()

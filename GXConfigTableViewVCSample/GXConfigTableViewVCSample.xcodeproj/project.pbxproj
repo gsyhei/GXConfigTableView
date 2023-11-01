@@ -19,6 +19,9 @@
 		964A429B2AF150B8007AC838 /* GXConfigTableRowInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A42952AF150B8007AC838 /* GXConfigTableRowInputCell.swift */; };
 		964A429D2AF150B8007AC838 /* GXConfigTableRowDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A42972AF150B8007AC838 /* GXConfigTableRowDefaultCell.swift */; };
 		964A429E2AF150B8007AC838 /* GXConfigTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A42982AF150B8007AC838 /* GXConfigTableModel.swift */; };
+		964A42A02AF158DE007AC838 /* GXConfigTableHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A429F2AF158DE007AC838 /* GXConfigTableHeaderFooter.swift */; };
+		964A42A22AF1E900007AC838 /* GXConfigTableRowAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A42A12AF1E900007AC838 /* GXConfigTableRowAvatarCell.swift */; };
+		964A42A42AF1EE38007AC838 /* GXConfigTableRowButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A42A32AF1EE38007AC838 /* GXConfigTableRowButtonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		964A42952AF150B8007AC838 /* GXConfigTableRowInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowInputCell.swift; sourceTree = "<group>"; };
 		964A42972AF150B8007AC838 /* GXConfigTableRowDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowDefaultCell.swift; sourceTree = "<group>"; };
 		964A42982AF150B8007AC838 /* GXConfigTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXConfigTableModel.swift; sourceTree = "<group>"; };
+		964A429F2AF158DE007AC838 /* GXConfigTableHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableHeaderFooter.swift; sourceTree = "<group>"; };
+		964A42A12AF1E900007AC838 /* GXConfigTableRowAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowAvatarCell.swift; sourceTree = "<group>"; };
+		964A42A32AF1EE38007AC838 /* GXConfigTableRowButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXConfigTableRowButtonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				964A42982AF150B8007AC838 /* GXConfigTableModel.swift */,
+				964A429F2AF158DE007AC838 /* GXConfigTableHeaderFooter.swift */,
 				964A42972AF150B8007AC838 /* GXConfigTableRowDefaultCell.swift */,
 				964A42952AF150B8007AC838 /* GXConfigTableRowInputCell.swift */,
 				964A42932AF150B8007AC838 /* GXConfigTableRowSwitchCell.swift */,
+				964A42A12AF1E900007AC838 /* GXConfigTableRowAvatarCell.swift */,
+				964A42A32AF1EE38007AC838 /* GXConfigTableRowButtonCell.swift */,
 				964A42942AF150B8007AC838 /* GXConfigTableViewController.swift */,
 			);
 			name = GXConfigTableViewVC;
@@ -236,7 +245,10 @@
 				964A42992AF150B8007AC838 /* GXConfigTableRowSwitchCell.swift in Sources */,
 				964A429E2AF150B8007AC838 /* GXConfigTableModel.swift in Sources */,
 				964A42832AF15057007AC838 /* ViewController.swift in Sources */,
+				964A42A22AF1E900007AC838 /* GXConfigTableRowAvatarCell.swift in Sources */,
+				964A42A02AF158DE007AC838 /* GXConfigTableHeaderFooter.swift in Sources */,
 				964A427F2AF15057007AC838 /* AppDelegate.swift in Sources */,
+				964A42A42AF1EE38007AC838 /* GXConfigTableRowButtonCell.swift in Sources */,
 				964A42812AF15057007AC838 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

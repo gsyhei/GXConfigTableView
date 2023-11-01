@@ -30,7 +30,7 @@ public class GXConfigTableViewController: UIViewController {
         if let letTv = self.tableView {
             letTv.removeFromSuperview()
         }
-        let tv = UITableView(frame: self.view.bounds, style: model.type)
+        let tv = UITableView(frame: self.view.bounds, style: model.style)
         tv.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
         tv.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tv.backgroundColor = model.backgroundColor
@@ -62,7 +62,7 @@ extension GXConfigTableViewController: UITableViewDataSource, UITableViewDelegat
             if cell == nil {
                 cell = GXConfigTableRowInputCell(style: inputModel.style, reuseIdentifier: inputModel.reuseIdentifier)
             }
-            cell?.bind(model: inputModel, type: GXConfigTableRowInputModel.self)
+            cell?.bind(model: inputModel)
 
             return cell!
         }
@@ -71,16 +71,25 @@ extension GXConfigTableViewController: UITableViewDataSource, UITableViewDelegat
             if cell == nil {
                 cell = GXConfigTableRowSwitchCell(style: switchModel.style, reuseIdentifier: switchModel.reuseIdentifier)
             }
-            cell?.bind(model: switchModel, type: GXConfigTableRowSwitchModel.self)
+            cell?.bind(model: switchModel)
 
             return cell!
         }
         else if let avatarModel = model as? GXConfigTableRowAvatarModel {
-            var cell = tableView.dequeueReusableCell(withIdentifier: avatarModel.reuseIdentifier) as? GXConfigTableRowDefaultCell
+            var cell = tableView.dequeueReusableCell(withIdentifier: avatarModel.reuseIdentifier) as? GXConfigTableRowAvatarCell
             if cell == nil {
-                cell = GXConfigTableRowDefaultCell(style: avatarModel.style, reuseIdentifier: avatarModel.reuseIdentifier)
+                cell = GXConfigTableRowAvatarCell(style: avatarModel.style, reuseIdentifier: avatarModel.reuseIdentifier)
             }
-            cell?.bind(model: avatarModel, type: GXConfigTableRowAvatarModel.self)
+            cell?.bind(model: avatarModel)
+
+            return cell!
+        }
+        else if let buttonModel = model as? GXConfigTableRowButtonModel {
+            var cell = tableView.dequeueReusableCell(withIdentifier: buttonModel.reuseIdentifier) as? GXConfigTableRowButtonCell
+            if cell == nil {
+                cell = GXConfigTableRowButtonCell(style: buttonModel.style, reuseIdentifier: buttonModel.reuseIdentifier)
+            }
+            cell?.bind(model: buttonModel)
 
             return cell!
         }
@@ -93,7 +102,7 @@ extension GXConfigTableViewController: UITableViewDataSource, UITableViewDelegat
             if cell == nil {
                 cell = GXConfigTableRowDefaultCell(style: defaultModel.style, reuseIdentifier: defaultModel.reuseIdentifier)
             }
-            cell?.bind(model: defaultModel, type: GXConfigTableRowDefaultModel.self)
+            cell?.bind(model: defaultModel)
 
             return cell!
         }
@@ -101,18 +110,28 @@ extension GXConfigTableViewController: UITableViewDataSource, UITableViewDelegat
     }
     // MRAK: - UITableViewDelegate
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let group = self.dataSource[section]
-//        guard group.headerTitle.count > 0 else { return nil }
-//        let view = tableView.dequeueReusableHeaderFooterView(GXTableViewHeaderFooterView.self)
-//        view?.titleLabel.text = group.headerTitle
-//        return view
-        return nil
+        guard let header = self.dataSource?.sectionList[section].header else { return nil }
+        var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.reuseIdentifier) as? GXConfigTableHeaderFooter
+        if view == nil {
+            view = GXConfigTableHeaderFooter(reuseIdentifier: header.reuseIdentifier)
+        }
+        view?.bind(model: header)
+        return view
+    }
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard let footer = self.dataSource?.sectionList[section].footer else { return nil }
+        var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.reuseIdentifier) as? GXConfigTableHeaderFooter
+        if view == nil {
+            view = GXConfigTableHeaderFooter(reuseIdentifier: footer.reuseIdentifier)
+        }
+        view?.bind(model: footer)
+        return view
     }
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.dataSource?.sectionList[section].headerHeight ?? 0
+        return self.dataSource?.sectionList[section].header?.height ?? 0
     }
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return self.dataSource?.sectionList[section].footerHeight ?? 0
+        return self.dataSource?.sectionList[section].footer?.height ?? 0
     }
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.dataSource?.sectionList[indexPath.section].rowList[indexPath.row].rowHeight ?? 0
