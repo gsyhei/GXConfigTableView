@@ -4,5 +4,5 @@
 效果图
 --
 <p align="center">
-<img src="https://github.com/gsyhei/BreadcrumbsGXConfigTableViewVC">
+<img src="https://github.com/gsyhei/GXConfigTableViewVC/blob/main/GXConfigTableViewVCSample.png">
 </p>
