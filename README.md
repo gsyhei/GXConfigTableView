@@ -3,6 +3,6 @@
 
 效果图
 --
-<p align="center">
+<p align="left">
 <img src="https://github.com/gsyhei/GXConfigTableViewVC/blob/main/GXConfigTableViewVCSample.png">
 </p>
