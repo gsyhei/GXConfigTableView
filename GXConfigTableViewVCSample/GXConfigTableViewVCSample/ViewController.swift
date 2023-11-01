@@ -15,7 +15,7 @@ class ViewController: GXConfigTableViewController {
         self.title = "GXConfigTableViewVCSample"
 
         let model = GXConfigTableModel()
-        model.style = .grouped
+        model.style = .insetGrouped
         model.backgroundColor = UIColor(white: 0.9, alpha: 1)
 
         let section0 = GXConfigTableSectionModel()
