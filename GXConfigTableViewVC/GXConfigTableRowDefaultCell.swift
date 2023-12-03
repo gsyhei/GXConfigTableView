@@ -24,10 +24,16 @@ public class GXConfigTableRowDefaultCell: UITableViewCell {
         super.layoutSubviews()
 
         guard let letModel = self.model else { return }
+        if self.imageView?.image != nil {
+            var ivRect: CGRect = self.imageView?.frame ?? .zero
+            ivRect.origin.x = letModel.contentMargin
+            self.imageView?.frame = ivRect
+        }
+
         guard letModel.isMember(of: GXConfigTableRowDefaultModel.self) else { return }
         guard letModel.style == .value1 else { return }
         guard letModel.titleNumberOfLines != letModel.detailNumberOfLines else { return }
-        
+
         if let letTextLabel = self.textLabel, let letDetailLabel = self.detailTextLabel {
             if letModel.titleNumberOfLines > letModel.detailNumberOfLines {
                 var detailRect = letDetailLabel.frame
@@ -65,7 +71,7 @@ public class GXConfigTableRowDefaultCell: UITableViewCell {
 
         self.textLabel?.numberOfLines = model.titleNumberOfLines
         self.detailTextLabel?.numberOfLines = model.detailNumberOfLines
-        
+
         if let titleFont = model.titleFont {
             self.textLabel?.font = titleFont
         }

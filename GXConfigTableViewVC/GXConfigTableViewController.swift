@@ -7,10 +7,10 @@
 
 import UIKit
 
-public class GXConfigTableViewController: UIViewController {
-    public var tableView: UITableView?
+open class GXConfigTableViewController: UIViewController {
+    open var tableView: UITableView?
 
-    public var dataSource: GXConfigTableModel? {
+    open var dataSource: GXConfigTableModel? {
         didSet {
             if let model = self.dataSource {
                 self.configTableView(model: model)
@@ -18,11 +18,11 @@ public class GXConfigTableViewController: UIViewController {
         }
     }
 
-    public override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
+    open override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge {
         return .bottom
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
     }
 
@@ -41,7 +41,7 @@ public class GXConfigTableViewController: UIViewController {
         self.tableView = tv
     }
 
-    public func gx_tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, model: GXConfigTableRowCustomModel) -> UITableViewCell  {
+    open func gx_tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath, model: GXConfigTableRowCustomModel) -> UITableViewCell  {
         return UITableViewCell()
     }
 }
@@ -128,13 +128,13 @@ extension GXConfigTableViewController: UITableViewDataSource, UITableViewDelegat
         return view
     }
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.dataSource?.sectionList[section].header?.height ?? 0
+        return self.dataSource?.sectionList[section].header?.height ?? .leastNonzeroMagnitude
     }
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return self.dataSource?.sectionList[section].footer?.height ?? 0
+        return self.dataSource?.sectionList[section].footer?.height ?? .leastNonzeroMagnitude
     }
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.dataSource?.sectionList[indexPath.section].rowList[indexPath.row].rowHeight ?? 0
+        return self.dataSource?.sectionList[indexPath.section].rowList[indexPath.row].rowHeight ?? .leastNonzeroMagnitude
     }
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
